@@ -153,4 +153,4 @@ You should see the web page with the form to upload an image. After submitting t
 
 Remember to replace `your_domain_or_ip` with your server's actual domain name or IP address.
 
-Congratulations! You have successfully set up the AutoDerm API Node.js application. You can now use it to predict skin diseases based on uploaded images. Happy skin disease prediction! 🌟
+Congratulations! You have successfully set up the AutoDerm API Node.js application. You can now use it to predict skin diseases based on uploaded images. Stay healthy! 🌟
