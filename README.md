@@ -1,4 +1,4 @@
-# AutoDerm API - Node.js Skin Disease Prediction App
+# AutoDerm API - Node.js Skin Disease Prediction App ⚕️
 
 ![AutoDerm API Logo](https://autoderm.firstderm.com/documentation/img/logo.png)
 
