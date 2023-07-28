@@ -156,6 +156,7 @@ Remember to replace `your_domain_or_ip` with your server's actual domain name or
 Congratulations! You have successfully set up the AutoDerm API Node.js application. You can now use it to predict skin diseases based on uploaded images. Stay healthy! 🌟
 
 ## Preview
-![image (1)](https://github.com/Tescan-group/FirstDerm-AutoDerm-API-NodeJS/assets/73188081/9edeec20-5813-470f-8100-ff97e2ca77d3)
+
+![Preview image](https://github.com/Tescan-group/FirstDerm-AutoDerm-API-NodeJS/assets/73188081/9edeec20-5813-470f-8100-ff97e2ca77d3)
 
 index.html is set to display the prediction with higest and second highest confidence value. You may edit the index.html file's <script> section accordingly if you wish a different result system.
