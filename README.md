@@ -169,6 +169,9 @@ http://your_domain_or_ip
 
 You should see the web page with the form to upload an image. After submitting the image, the API response should be displayed on the page.
 
+If you are using a domain instead of server IP, make sure that the domain is pointed to your VPS server;
+[How to Point a Domain to Your VPS](https://support.hostinger.com/en/articles/1583227-how-to-point-a-domain-to-your-vps#:~:text=The%20easiest%20way%20to%20point,resolve%2Dto%20in%20its%20name)
+
 Remember to replace `your_domain_or_ip` with your server's actual domain name or IP address.
 
 Congratulations! You have successfully set up the AutoDerm API Node.js application. You can now use it to predict skin diseases based on uploaded images. Stay healthy! 🌟
