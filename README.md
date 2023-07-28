@@ -87,10 +87,22 @@ npm install express axios form-data multer fs
 
 ## Step 7: Start the Node.js Application
 
-Start the Node.js application by running the following command in the terminal:
+Install pm2 in order to run the NodeJS application in the background:
 
 ```bash
-node app.js
+npm install pm2 -g
+```
+
+Now, run the command below in order to start the NodeJS application:
+
+```bash
+pm2 start app.js
+```
+
+Verify the application status, it should be shown as "online" if no issues are faced:
+
+```bash
+pm2 status
 ```
 
 Your Node.js application should now be running and listening for requests on port 8000.
