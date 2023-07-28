@@ -27,7 +27,7 @@ index.html is set to display the prediction with higest and second highest confi
 
 Before setting up the AutoDerm API Node.js application, ensure you have the following:
 
-- An Ubuntu VPS with SSH access
+- An Ubuntu VPS with SSH access. If looking for a reliable host, [Hostinger](https://www.hostinger.com/) is recommended 👍
 - Node.js and npm installed on the VPS
 - An AutoDerm API key. If you don't have one, you can obtain it at [https://autoderm.firstderm.com/](https://autoderm.firstderm.com/)
 
