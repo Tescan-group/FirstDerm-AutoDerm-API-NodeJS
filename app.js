@@ -9,7 +9,7 @@ const app = express();
 const port = 8000;
 
 // Set the API key as an environment variable
-const apiKey = "OQK9f8z2ZV5ypJ7z5vMlkywtBVkYkocCuaX9j1xrFoI";
+const apiKey = "YOUR_API_KEY";
 
 // Set up multer for file uploads
 const upload = multer({ dest: 'uploads/' });
