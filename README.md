@@ -22,6 +22,7 @@ index.html is set to display the prediction with higest and second highest confi
 8. [Step 7: Start the Node.js Application](#step-7-start-the-nodejs-application)
 9. [Step 8: Set Up Nginx Reverse Proxy](#step-8-set-up-nginx-reverse-proxy)
 10. [Step 9: Access the Application](#step-9-access-the-application)
+11. [Important Notes](#important-notes)
 
 ## Prerequisites
 
@@ -170,6 +171,20 @@ http://your_domain_or_ip
 You should see the web page with the form to upload an image. After submitting the image, the API response should be displayed on the page.
 
 Remember to replace `your_domain_or_ip` with your server's actual domain name or IP address.
+
+## Important Notes
+
+Making changes to app.js will not reflect unless you restart the app afterwards using the command below;
+
+```bash
+pm2 restart app.js
+```
+
+If the app is not online, to troubleshoot you may check for pm2 logs;
+
+```bash
+pm2 logs
+```
 
 If you are using a domain instead of server IP, make sure that the domain is pointed to your VPS server;
 [How to Point a Domain to Your VPS](https://support.hostinger.com/en/articles/1583227-how-to-point-a-domain-to-your-vps#:~:text=The%20easiest%20way%20to%20point,resolve%2Dto%20in%20its%20name)
