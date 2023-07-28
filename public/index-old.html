@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirstDerm Skin Image Diagnosis</title>
+</head>
+<body>
+    <h1>FirstDerm Skin Image Diagnosis</h1>
+    <form action="/submit_image" method="post" enctype="multipart/form-data">
+        <label for="image">Upload Skin Image:</label>
+        <input type="file" id="file" name="file" accept="image/*">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result">
+        <h2>Prediction Results:</h2>
+        <div id="predictions"></div>
+    </div>
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const response = await fetch('/submit_image', {
+            method: 'POST',
+            body: formData
+        });
+        const data = await response.json();
+        displayResults(data);
+    });
+
+    function displayResults(data) {
+        const predictionsDiv = document.getElementById('predictions');
+        predictionsDiv.innerHTML = ''; // Clear previous results
+
+        if (data.predictions && data.predictions.length > 0) {
+            // Sort predictions based on confidence in descending order
+            const sortedPredictions = data.predictions.sort((a, b) => b.confidence - a.confidence);
+
+            // Display prediction with highest confidence
+            const highestConfidencePrediction = sortedPredictions[0];
+            const highestConfidenceDiv = createPredictionResultDiv(highestConfidencePrediction, 'Highest Confidence:');
+            predictionsDiv.appendChild(highestConfidenceDiv);
+
+            if (sortedPredictions.length > 1) {
+                // Display prediction with second-highest confidence
+                const secondHighestConfidencePrediction = sortedPredictions[1];
+                const secondHighestConfidenceDiv = createPredictionResultDiv(secondHighestConfidencePrediction, 'Next Possibility:');
+                predictionsDiv.appendChild(secondHighestConfidenceDiv);
+            }
+        } else {
+            const errorDiv = document.createElement('div');
+            errorDiv.innerHTML = '<p>No predictions available.</p>';
+            predictionsDiv.appendChild(errorDiv);
+        }
+    }
+
+    function createPredictionResultDiv(prediction, heading) {
+        const resultDiv = document.createElement('div');
+        resultDiv.innerHTML = `
+            <h2>${heading}</h2>
+            <p><strong>ICD:</strong> ${prediction.icd}</p>
+            <p><strong>Name:</strong> ${prediction.name}</p>
+            <a href="${prediction.readMoreUrl}" target="_blank"><strong>Click here to Learn More</strong></a>
+            <hr>
+        `;
+        return resultDiv;
+    }
+</script>
+
+</body>
+</html>
+
